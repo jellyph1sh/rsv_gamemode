@@ -1,7 +1,7 @@
 fx_version "cerulean"
 game "gta5"
 
-version "1.0"
+version "1.1"
 description "Base of a gamemode"
 author "JellyPh1sh"
 

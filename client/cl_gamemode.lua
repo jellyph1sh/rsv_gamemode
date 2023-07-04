@@ -13,6 +13,7 @@ function SpawnConnectedPlayer()
     }, function(spawn)
         SetPedDefaultComponentVariation(PlayerPedId())
         SetPlayerWantedLevel(PlayerId(), 0, false)
+        SetMaxWantedLevel(0)
     end)
 end
 
@@ -22,17 +23,7 @@ function Revive()
     NetworkResurrectLocalPlayer(x, y, z, GetEntityHeading(ped), true, true, false)
 end
 
-function NoWantedLevel()
-    Citizen.CreateThread(function()
-        while true do
-            SetPlayerWantedLevel(PlayerId(), 0, false)
-            Citizen.Wait(5)
-        end
-    end)
-end
-
 RegisterNetEvent("jph_gamemode:revive")
 AddEventHandler("jph_gamemode:revive", Revive)
 
 SpawnConnectedPlayer()
-NoWantedLevel()
