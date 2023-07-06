@@ -11,6 +11,7 @@ function SpawnConnectedPlayer()
         model = Config.DefaultModel,
         skipFade = false
     }, function(spawn)
+        SetPedDefaultComponentVariation(PlayerPedId())
         TriggerServerEvent("rsv_skin:getclothes")
         SetPlayerWantedLevel(PlayerId(), 0, false)
         SetMaxWantedLevel(0)
